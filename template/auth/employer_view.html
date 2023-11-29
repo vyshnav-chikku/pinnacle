@@ -1,0 +1,120 @@
+{% extends 'auth/headerfooter.html'%}
+{% block content %}
+		<!-- main content start-->
+		<div id="page-wrapper">
+			<div class="main-page">
+				<div class="tables">
+					<h2 class="title1">Employer Registration Details</h2>
+				
+					<div class="table-responsive bs-example widget-shadow">
+						<!-- <h4>Employee :</h4> -->
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Logo   </th>
+									<th>Name Of the Organization  </th> 
+									<th>Name of the Representative </th>
+									<th>Email of the Representative </th>
+									<th>Contact Number  </th> 
+									<th>Contact Number of the Representative </th> 
+									<th>Designation of the Representative </th> 
+									<th>Address of the Organization  </th> 									
+									<th>Website </th> 
+
+									<!-- <th>No Of Position </th> 
+									<th>Gender </th> 
+									<th>Job Title  </th> 
+									<th>Job Description  </th> 
+									
+
+									<th>No Of Position  </th> 
+									<th>Gender </th> 
+									<th>Job Title </th> 
+									<th>Job Description </th> 
+									
+
+									<th>No Of Position </th> 
+									<th>Gender </th> 
+									<th>Job Title </th> 
+									<th>Job Description </th> 
+									
+
+									<th>No Of Position </th> 
+									<th>Gender </th> 
+									<th>Job Title </th> 
+									<th>Job Description </th> 
+									
+
+									<th>No Of Position </th> 
+									<th>Gender </th> 
+									<th>Job Title </th> 
+									<th>Job Description </th> -->
+									<th>Registration Date  </th> 
+									<th>Job File</th> 
+
+
+									
+
+									
+								</tr> 
+							</thead> 
+							<tbody> 
+								{% if query %}
+								{% for x in query %}
+								
+								<tr> 
+									<th scope="row">{{forloop.counter}}</th> 
+									<td><img src="{{x.logo.url}}" style="width: 200px; height: 150px; object-fit: contain;"></td> 
+									<td style="text-transform: capitalize;">{{x.nameorg}}</td> 
+									<td style="text-transform: capitalize;">{{x.rname}}</td> 
+									<td>{{x.email}} </td> 
+									<td>{{x.phone}} </td> 
+									<td>{{x.phoner}} </td> 
+									<td style="text-transform: capitalize;">{{x.designation}} </td> 
+									<td style="text-transform: capitalize;">{{x.address}} </td> 
+									<td>{{x.website}} </td> 
+
+									<!-- <td style="text-transform: capitalize;">{{x.positionnumber}} </td> 
+									<td style="text-transform: capitalize;">{{x.gender}} </td> 
+									<td style="text-transform: capitalize;">{{x.jobtitle}} </td> 
+									<td style="text-transform: capitalize;">{{x.description}} </td> 
+
+									<td style="text-transform: capitalize;">{{x.positionnumber1}} </td> 
+									<td style="text-transform: capitalize;">{{x.gender1}} </td> 
+									<td style="text-transform: capitalize;">{{x.jobtitle1}} </td> 
+									<td style="text-transform: capitalize;">{{x.description1}} </td> 
+
+									<td style="text-transform: capitalize;">{{x.positionnumber2}} </td> 
+									<td style="text-transform: capitalize;">{{x.gender2}} </td> 
+									<td style="text-transform: capitalize;">{{x.jobtitle2}} </td> 
+									<td style="text-transform: capitalize;">{{x.description2}} </td>
+
+									<td style="text-transform: capitalize;">{{x.positionnumber3}} </td> 
+									<td style="text-transform: capitalize;">{{x.gender3}} </td> 
+									<td style="text-transform: capitalize;">{{x.jobtitle3}} </td> 
+									<td style="text-transform: capitalize;">{{x.description3}} </td> 
+
+									<td style="text-transform: capitalize;">{{x.positionnumber4}} </td> 
+									<td style="text-transform: capitalize;">{{x.gender4}} </td> 
+									<td style="text-transform: capitalize;">{{x.jobtitle4}} </td> 
+									<td style="text-transform: capitalize;">{{x.description4}} </td>  -->
+									<td style="text-transform: capitalize;">{{x.date}} </td> 
+									<td><a href="{{x.job_file.url}} " target="_blank">File</a></td> 
+
+
+
+								</tr> 
+								{% endfor %}
+								{% else %}
+								<tr>
+									<td colspan="30" style="vertical-align: middle; text-align: center;"><p>No Data</p></td>
+								{% endif %}
+							</tbody> 
+						</table> 
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}
+	
