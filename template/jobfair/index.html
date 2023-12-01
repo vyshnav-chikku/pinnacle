@@ -12,10 +12,60 @@
 * ==========================================
 *
 */
+
+body {
+    min-height: 100vh;
+}
+
 .bg-cover {
     background-size: cover !important;
 }
 
+.hero_section{
+  padding:30px;
+  
+}
+.title{
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* @media screen and (max-w) {
+  
+} */
+.pinnacle{
+  color: #2da6de;
+}
+
+.links{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  /* flex-direction: column; */
+  font-size: 3rem;
+  font-weight: bold;
+}
+/* .employee{
+  margin-bottom: 50px;
+} */
+.employee,.employer{
+  display: flex;
+  flex-direction: column;
+  margin:10px;
+  margin-bottom: 50px;
+}
+.employee_title{
+  margin-bottom: 30px;
+
+}
+a{
+}
+.employer_title{
+  margin-bottom: 30px;
+}
 
 
 /*
@@ -26,14 +76,12 @@
 *
 */
 
-body {
-    min-height: 100vh;
-}
+
 </style>
-<div  style="background: url('/static/jobfair/images/banner/pinnacle1.jpg')" class="jumbotron bg-cover text-white">
+<!-- <div  style="background: url('/static/jobfair/images/banner/pinnacle1.jpg')" class="jumbotron bg-cover text-white">
     <div class="container py-5 text-center">
         <h1 style="" class="display-4 font-weight-bold" ><p>&nbsp;</p></h1>
-      <!--   <p class="font-italic mb-0">Using simple jumbotron-style component, create a nice Bootstrap 4 header with a background image.</p>
+         <p class="font-italic mb-0">Using simple jumbotron-style component, create a nice Bootstrap 4 header with a background image.</p>
         <p class="font-italic">Snippe by
             <a href="https://bootstrapious.com" class="text-white">
                 <u>Bootstrapious</u>
@@ -41,7 +89,24 @@ body {
         </p>
         <a href="#" role="button" class="btn btn-primary px-5">See All Features</a> -->
     </div>
+</div> 
+
+<div class="hero_section">
+  <div class="title"><strong ><span class="pinnacle">Pinnacle</span> '22</strong></div>
+  <div class="links">
+    <div class="employee">
+      <div class="employee_title">Register as Employee</div>
+      <a class="btn" href="/pinnacle-employee-registration/"><i class=""></i>Register Now</a>
+    </div>
+    <div class="employer">
+      <div class="employer_title">Looking For a candidate</div>
+
+      <a class="btn" href="/pinnacle-employer-registration/">Register Now</a>
+    </div>
+  </div>
 </div>
+
+
 
 
 <!-- <style type="text/css">
@@ -80,16 +145,16 @@ body {
 </nav> -->
 
 <!-- Full Page Image Header with Vertically Centered Content -->
-<header class="masthead">
+<!-- <header class="masthead">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
-      <div class="col-12 text-center">
+      <div class="col-12 text-center"> -->
         <!-- <h1 class="fw-light">Vertically Centered Masthead Content</h1>
         <p class="lead">A great starter layout for a landing page</p> -->
-      </div>
+      <!-- </div>
     </div>
   </div>
-</header>
+</header> -->
 
 <!-- <section class="halfscreen" data-bg-parallax="/static/jobfair/images/parallax/18.jpg">
 <div class="bg-overlay"></div>
@@ -191,7 +256,7 @@ body {
   <div class="row">
   <div class="col-lg-6">
   <div class="heading-text heading-section">
-  <h2 ><span style="text-transform: uppercase; color: #2da6de;"><strong >Pinnacle</span> '22</strong></h2>
+  <!-- <h2 ><span style="text-transform: uppercase; color: #2da6de;"><strong >Pinnacle</span> '22</strong></h2> -->
   <span class="lead" style ="text-align: justify;
   text-justify: inter-word"><p>Pinnacle'22 will accrue the employers, experienced professionals and entry level talented individuals under one roof.This Job fair will also compile organizations from various sectors including all kinds of private organizations,highly competitive and professional job seekers thereby serving as the platform for an open and wide-ranging employment opportunities.</p>
     <p>Employment is one of the basic needs in order to survive in the world. Employers and job seekers will be available in one place and the job seekers can meet the employers and get the chance to get their dream job. The main objective of Pinnacle 2022 is to provide employment to the unemployed youths of Kerala. Through this job fest, the job seekers can meet the employers and be able to grab the job of their choice. 
@@ -199,7 +264,7 @@ body {
   </div>
   </div>
   <div class="col-lg-6 m-t-100">
-    <div class="post-image"> <a > <img alt="" src="/static/jobfair/images/blog/12.jpg"> </a><!--  <span class="post-meta-category"><a href="#">Lifestyle</a></span> --> </div>
+    <div class="post-image w-80"> <a > <img alt="" src="/static/jobfair/images/blog/12.jpg"> </a><!--  <span class="post-meta-category"><a href="#">Lifestyle</a></span> --> </div>
   <!-- <div class="p-progress-bar-container title-up small extra-small color">
   <div class="p-progress-bar" data-percent="100" data-delay="100" data-type="%">
   <div class="progress-title">HTML5</div>
@@ -277,22 +342,7 @@ recruiting young talent, and you have the opportunity to impress them before the
 </div>
 </div>
 </section> -->
-<section class="halfscreen" data-bg-parallax="/static/jobfair/images/parallax/2.jpg">
-<div class="bg-overlay"></div>
-<div class="container container-fullscreen text-light">
-<div class="text-middle text-center">
-<h1 class="text-uppercase text-medium">Looking for a Job?</h1>
-<!-- <h3 class="lead">Looking for a Job?</h3> -->
-<a class="btn" href="/pinnacle-employee-registration/"><i class=""></i>Register Now</a>
-</div>
-<br>
-<div class="text-middle text-center">
-  <h1 class="text-uppercase text-medium">Looking for an Candidate?</h1>
-  <!-- <h3 class="lead">Looking for a Employee?</h3> -->
-<a class="btn" href="/pinnacle-employer-registration/">Register Now</a>
-</div>
-</div>
-</section>
+
 
 <br>
 <br>

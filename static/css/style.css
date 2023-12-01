@@ -197,6 +197,7 @@ section{
 .row.no-gape{
   margin: 0;
 }
+
 .row.no-gape > div{
   padding: 0;
 }
