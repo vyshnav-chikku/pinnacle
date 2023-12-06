@@ -3,11 +3,24 @@
 {% block title %}
 <title>Pinnacle 2022 | Employer Registration </title>
 {% endblock %}
-<section id="page-title" data-bg-parallax="/static/jobfair/images/parallax/14.jpg">
+
+<style>
+.company_details_title{
+  background:rgb(136, 136, 136);
+  padding:5px;
+  border-radius: 7px;
+  color:white;
+  font-size: 1.6rem;
+  width:200px;
+  text-align: center;
+}
+</style>
+
+<section id="page-title" data-bg-parallax="/static/jobfair/images/parallax/header.jpg">
 <div class="bg-overlay"></div>
 <div class="container">
 <div class="page-title">
-<h1 class="text-uppercase text-medium">Employer Registration</h1>
+<h1 class="text-uppercase text-medium"><strong>Employer Registration</strong></h1>
 <h4 style="color: red; text-align: center;" >{{error}}</h4>
 <h4 style="color: green; text-align: center;" >{{msg}}</h4>
 <!-- <span>Work is easy when you have all tools around you!</span> -->
@@ -17,67 +30,128 @@
 <section class="p-b-10">
 <div class="container">
 <div class="row">
-<div class="col-lg-12">
+<!-- <div class="col-lg-12">
 	<div class="heading-text heading">
-<h4>Register Here</h4>
-</div>
+<h4>Company Details</h4>
+</div> -->
 
 <form action="/pinnacle-employer-registration/" method="POST" enctype='multipart/form-data'>
   {% csrf_token %}
   <div class="form-row">
 
-
+    <div class="form-group col-md-12">
+    
+              <h3 class="company_details_title" ><strong>Company Details</strong></h3>
+            
+        </div>
+        <br>
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Name of the Organization<span style="color: red;">*</span></label>
+      <br>
+      <label for="inputEmail4"><strong>Name of the Organization</strong><span style="color: red;">*</span></label>
       <input type="text" class="form-control" id="inputEmail4" placeholder="Name of the Organization" name="name" required>
     </div>
 
 
     <div class="form-group col-md-6">
-     <label for="inputEmail4">Email <span style="color: red;">*</span></label>
+      <br>
+
+     <label for="inputEmail4"><strong>Email</strong><span style="color: red;">*</span></label>
       <input type="Email" class="form-control" id="inputPassword4" placeholder="Email" name="email" required>
     </div>
   
   <div class="form-group col-md-6">
 <br>  	
-    <label for="inputEmail4">Phone Number <span style="color: red;">*</span></label>
+    <label for="inputEmail4"><strong>Phone Number</strong> <span style="color: red;">*</span></label>
     <input type="text" class="form-control" id="inputAddress" placeholder="Phone Number" name="phone" onkeypress="return onlyNumberKey(event)" required>
   </div>
 
   
+  <div class="form-group col-md-6">
+    <br>   	
+         <label for="inputEmail4"><strong>Industry/ Sector</strong> <span style="color: red;">*</span></label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Industry/Sector" name="industry" required>
+        </div>
+  <div class="form-group col-md-6">
+    <br>   	
+
+  
+        <label for="fruitSelect"><strong>Organisation Type</strong></label>
+        <select id="fruitSelect" name="organisation">
+          <option value="Not Selected" selected>-Select-</option>
+          <option value="Cooperative Society">Cooperative Society</option>
+          <option value="Sole Proprietorship">Sole Proprietorship</option>
+          <option value="Family Owned Business">Family Owned Business</option>
+          <option value="Private Limited Company">Private Limited Company</option>
+          <option value="Public Limited Company">Public Limited Company</option>
+          <option value="Limited Laibility Partnership">Limited Laibility Partnership</option>
+          <option value="Educational Institution">Educational Institution</option>
+          <option value="Life Insurance Company">Life Insurance Company</option>
+          <option value="Others">Others</option>
+        </select>
+      </div>
+
+  <div class="form-group col-md-6">
+        <br>   	
+    
+      
+            <label for="fruitSelect"><strong>Public/ Private</strong></label>
+            <select id="fruitSelect" name="company_type"> 
+              <option value="Not Selected" selected>-Select-</option>
+              <option value="Public">Public</option>
+              <option value="Private">Private</option>
+            </select>
+          </div>
+<br>
+
+<div class="form-group col-md-6">
+  <br>
+  <label for="inputEmail4"><strong>Profile</strong><span style="color: red;">*</span></label>
+      <textarea class="form-control" id="inputAddress" placeholder="Profile" name="profile" required></textarea>
+  </div>
+   <div class="form-group col-md-6">
+  <br>
+  <label for="inputEmail4"><strong>Address</strong> <span style="color: red;">*</span></label>
+    <textarea class="form-control" id="inputAddress" placeholder="Address" name="address" required></textarea>
+  </div>
+
+<div class="form-group col-md-12">
+  <br>   	
+
+  <h3 class="company_details_title"><strong>Contact Details</strong></h3>
+    </div>
+
+<br>
 
    <div class="form-group col-md-6">
 <br>   	
-     <label for="inputEmail4">Name of the Representative <span style="color: red;">*</span></label>
+     <label for="inputEmail4"><strong>Name of the Representative</strong> <span style="color: red;">*</span></label>
       <input type="text" class="form-control" id="inputPassword4" placeholder="Name of the Representative" name="rname" required>
     </div>
 
 
   <div class="form-group col-md-6">
 <br>  	
-    <label for="inputEmail4">Designation of the Representative <span style="color: red;">*</span></label>
+    <label for="inputEmail4"><strong>Designation of the Representative</strong><span style="color: red;">*</span></label>
     <input type="text" class="form-control" iD="inputAddress2" placeholder="Designation" name="designation" required>
   </div>
 
      <div class="form-group col-md-6">
 <br>
-      <label for="inputCity">Website URL <span style="color: red;">*</span></label>
+      <label for="inputCity"><strong>Website URL</strong><span style="color: red;">*</span></label>
       <input type="text" class="form-control" id="inputCity" placeholder="Website URL" name="website" required>
     </div>
 </div>
 <div class="form-row">
-    <div class="form-group col-md-12">
-<br>
-<label for="inputEmail4">Address <span style="color: red;">*</span></label>
-    <textarea class="form-control" id="inputAddress" placeholder="Address" name="address" required></textarea>
+   
 </div>
-</div>
+
+
 
  <div class="form-row">
 
     <div class="form-group col-md-6">
 <br>    	
-      <label for="File">Upload Your Job Vacancy <span style="color: red;">*</span></label>
+      <label for="File"><strong>Upload Your Job Vacancy</strong><span style="color: red;">*</span></label>
       <input type="file" class="form-control" id="File" name="file" accept=".xlsx, .csv" required>
       <p style="font-size: 12px;">Maximum Uploadable size is 5 MB. Only Excel file type is supported.</p>
       <p>Click Here to Download <a href="/static/file/sample file job details.xlsx" download="w3logo" style="color: blue;">File Format.</a> </p>

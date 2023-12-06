@@ -1,0 +1,21 @@
+emloyer reg 
+employee reg
+
+font bold
+
+2part employer
+
+district select
+
+preferred  
+job mathi
+
+
+
+slash pinnacle
+box company details
+
+employee-candidate
+
+
+

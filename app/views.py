@@ -52,20 +52,41 @@ def employee_registration(request):
 def employee_registration_jobfair(request):
 	if request.method=="POST":
 		name=request.POST['name']
+		place=request.POST['place']
+		dob=request.POST['dob']
+		gender=request.POST['gender']
+		maritial=request.POST['maritial']
 		email=request.POST['email']
 		phone=request.POST['phone']
 		qualification=request.POST['qualification']
 		experience=request.POST['experience']
 		linkedin=request.POST['linkedin']
-		category=request.POST['jobcategory']
+		job_option_1=request.POST['job_option_1']
+		job_option_2=request.POST['job_option_2']
+		job_option_3=request.POST['job_option_3']
+
 		resume=request.FILES['resume']
 		date = datetime.datetime.now().date()
 
-		check=employee_tb_jobfair.objects.all().filter(name=name,email=email,phone=phone,qualification=qualification,experience=experience,linkedin=linkedin,category=category,date=date)
+		check=employee_tb_jobfair.objects.all().filter(name=name,place=place,
+		email=email,dob=dob,gender=gender,maritial=maritial,phone=phone,
+		qualification=qualification,
+		experience=experience,linkedin=linkedin,
+		job_option_1=job_option_1,
+		job_option_2=job_option_2,
+		job_option_3=job_option_3,
+		date=date)
 		if check:
 			return render(request,'jobfair/employee.html',{'error':'Already Registerd '})
 		else:
-			add=employee_tb_jobfair(name=name,email=email,phone=phone,qualification=qualification,experience=experience,linkedin=linkedin,category=category,resume=resume,date=date)
+			add=employee_tb_jobfair(name=name,place=place,email=email,
+			dob=dob,gender=gender,maritial=maritial,phone=phone,
+			qualification=qualification,experience=experience,
+			linkedin=linkedin,
+			job_option_1=job_option_1,
+			job_option_2=job_option_2,
+			job_option_3=job_option_3,
+			resume=resume,date=date)
 			add.save()
 			return render(request,'jobfair/employee.html',{'msg':'Thank You For Registering'})
 	else:
@@ -111,17 +132,21 @@ def employer_registration_jobfair(request):
 		rname = request.POST['rname']
 		designation = request.POST['designation']
 		website = request.POST['website']
+		industry = request.POST['industry']
+		organisation = request.POST['organisation']
+		company_type = request.POST['company_type']
 		address = request.POST['address']
+		profile = request.POST['profile']
 		job_file=request.FILES['file']
 		date = datetime.datetime.now().date()
 
 		# check=employer_tb.objects.all().filter(nameorg=nameorg,rname=rname,email=email,phone=phone,phoner=phoner,designation=designation,website=website,address=address,positionnumber=positionnumber,gender=gender,jobtitle=jobtitle,description=description,positionnumber1=positionnumber1,gender1=gender1,jobtitle1=jobtitle1,description1=description1,positionnumber2=positionnumber2,gender2=gender2,jobtitle2=jobtitle2,description2=description2,positionnumber3=positionnumber3,gender3=gender3,jobtitle3=jobtitle3,description3=description3,positionnumber4=positionnumber4,gender4=gender4,jobtitle4=jobtitle4,description4=description4,date=date)
-		check=employer_tb_jobfair.objects.all().filter(nameorg=nameorg,rname=rname,email=email,phone=phone,designation=designation,website=website,address=address,date=date)
+		check=employer_tb_jobfair.objects.all().filter(nameorg=nameorg,rname=rname,email=email,phone=phone,designation=designation,industry=industry,organisation=organisation,company_type=company_type,website=website,address=address,profile=profile,date=date)
 
 		if check:
 			return render(request,'jobfair/employer.html',{'error':'Already Registerd '})
 		else:
-			add=employer_tb_jobfair(nameorg=nameorg,rname=rname,email=email,phone=phone,designation=designation,website=website,address=address,job_file=job_file,date=date)
+			add=employer_tb_jobfair(nameorg=nameorg,rname=rname,email=email,phone=phone,designation=designation,industry=industry,organisation=organisation,company_type=company_type,website=website,address=address,profile=profile,job_file=job_file,date=date)
 			add.save()
 		return render(request,'jobfair/employer.html',{'msg':'Thank You For Registering'})
 	else:

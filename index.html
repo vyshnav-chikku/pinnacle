@@ -1,0 +1,372 @@
+
+{% extends 'jobfair/headerfooter.html' %}
+{% block title %}
+<title>Mizone | Pinnacle 2022 - Home</title>
+{% endblock %}
+{% block content %}
+<style type="text/css">
+  /*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+body {
+    min-height: 100vh;
+    background-size: contain;
+  
+}
+
+.bg-cover {
+    background-size: cover !important;
+}
+
+.hero_section{
+  padding:30px;
+  
+}
+.title{
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+}
+/* @media screen and (max-w) {
+  
+} */
+.pinnacle{
+  color: #2da6de;
+}
+
+.links{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  /* flex-direction: column; */
+  font-size: 2.9rem;
+  font-weight: bold;
+}
+/* .employee{
+  margin-bottom: 50px;
+} */
+.employee,.employer{
+  display: flex;
+  flex-direction: column;
+  margin:10px;
+  margin-bottom: 50px;
+}
+.employee_title{
+  margin-bottom: 30px;
+
+}
+a{
+}
+.employer_title{
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width:1016px){
+  .title{
+  font-size: 3rem;
+  margin-bottom: 40px;
+
+}
+  .hero_section{
+  padding:30px 0 0px;
+  
+}
+.employee,.employer{
+  margin-bottom: 0px;
+
+}
+.links{
+  font-size: 2.1rem;
+}
+
+}
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+
+</style>
+<!-- <div  style="background: url('/static/jobfair/images/banner/pinnacle1.jpg')" class="jumbotron bg-cover text-white">
+    <div class="container py-5 text-center">
+        <h1 style="" class="display-4 font-weight-bold" ><p>&nbsp;</p></h1>
+         <p class="font-italic mb-0">Using simple jumbotron-style component, create a nice Bootstrap 4 header with a background image.</p>
+        <p class="font-italic">Snippe by
+            <a href="https://bootstrapious.com" class="text-white">
+                <u>Bootstrapious</u>
+            </a>
+        </p>
+        <a href="#" role="button" class="btn btn-primary px-5">See All Features</a> -->
+    </div>
+</div> 
+
+<div class="hero_section">
+  <div class="title"><strong ><span class="pinnacle">Pinnacle</span> '22</strong></div>
+  <div class="links">
+    <div class="employee">
+      <div class="employee_title">Register as Employee</div>
+      <a class="btn" href="/pinnacle-employee-registration/"><i class=""></i>Register Now</a>
+    </div>
+    <div class="employer">
+      <div class="employer_title">Looking For a candidate</div>
+
+      <a class="btn" href="/pinnacle-employer-registration/">Register Now</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <style type="text/css">
+  .masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url("/static/jobfair/images/banner/pinnacle1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</style> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Start Bootstrap</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<!-- Full Page Image Header with Vertically Centered Content -->
+<!-- <header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center"> -->
+        <!-- <h1 class="fw-light">Vertically Centered Masthead Content</h1>
+        <p class="lead">A great starter layout for a landing page</p> -->
+      <!-- </div>
+    </div>
+  </div>
+</header> -->
+
+<!-- <section class="halfscreen" data-bg-parallax="/static/jobfair/images/parallax/18.jpg">
+<div class="bg-overlay"></div>
+<div class="container container-fullscreen text-light">
+<div class="text-middle text-center">
+<h1 class="text-uppercase text-medium">Pinnacle '22</h1>
+</div>
+</div>
+</section>
+ -->
+<!--  <style type="text/css">
+   .masthead {
+  overflow: hidden;
+  color: #FFF;
+  padding: 1em;
+  /*border-top: 6px solid #2da6de;*/
+  background-color: #404040;
+}
+
+  .responsive-image {
+    background-position: center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+  }
+
+
+.masthead .entry-header {
+  margin: 7.5em 0 3.5em 0;
+  font-weight: 300;
+  line-height: 1.5;
+  overflow: auto;
+}
+
+  @media screen and (min-width: 640px) {
+    margin: 15.5em 0 7.5em 0;
+  }
+
+
+
+.masthead .entry-title {
+  font-size: 2.5;
+  line-height: 1;
+  font-weight: 700;
+  margin: 0 0 0.25em 0;
+}
+
+  @media screen and (min-width: 640px) {
+    max-width: 650px;
+    font-size: 4em;
+  }
+
+
+
+.masthead .entry-subtitle {
+  font-family: "freight-text-pro";
+  font-style: italic;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 0.35em;
+  color: #9BA800;
+  font-size: 1.5em;
+}
+
+  .responsive-image {
+    background-image: url("/static/jobfair/images/banner/pinnacle.jpg");
+  }
+
+  @media screen and (min-width: 320px) {
+    .responsive-image {
+      background-image: url("/static/jobfair/images/banner/pinnacle320.jpg");
+    }
+  }
+  @media screen and (min-width: 640px)
+  {
+    .responsive-image {
+      background-image: url("/static/jobfair/images/banner/pinnacle640.jpg");
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .responsive-image {
+      background-image: url("/static/jobfair/images/banner/pinnacle1024.jpg");
+    }
+  }
+</style>
+
+<div class="masthead responsive-image">
+   <header class="entry-header">
+      <h1 class="entry-title  ">Pinnacle'22</h1>
+      <h2 class="entry-subtitle">Some sort of lovely supporting title</h2>
+    </header>
+  </div> -->
+<style>
+
+</style>
+<section class="p-b-10">
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-6">
+  <div class="heading-text heading-section">
+  <!-- <h2 ><span style="text-transform: uppercase; color: #2da6de;"><strong >Pinnacle</span> '22</strong></h2> -->
+  <span class="lead" style ="text-align: justify;
+  text-justify: inter-word"><p>Pinnacle'22 will accrue the employers, experienced professionals and entry level talented individuals under one roof.This Job fair will also compile organizations from various sectors including all kinds of private organizations,highly competitive and professional job seekers thereby serving as the platform for an open and wide-ranging employment opportunities.</p>
+    <p>Employment is one of the basic needs in order to survive in the world. Employers and job seekers will be available in one place and the job seekers can meet the employers and get the chance to get their dream job. The main objective of Pinnacle 2022 is to provide employment to the unemployed youths of Kerala. Through this job fest, the job seekers can meet the employers and be able to grab the job of their choice. 
+    </p></span>
+  </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="post-image w-80"> <a > <img alt="" src="/static/jobfair/images/blog/12.jpg"> </a><!--  <span class="post-meta-category"><a href="#">Lifestyle</a></span> --> </div>
+  <!-- <div class="p-progress-bar-container title-up small extra-small color">
+  <div class="p-progress-bar" data-percent="100" data-delay="100" data-type="%">
+  <div class="progress-title">HTML5</div>
+  </div>
+  </div>
+  <div class="p-progress-bar-container title-up small extra-small color">
+  <div class="p-progress-bar" data-percent="94" data-delay="200" data-type="%">
+  <div class="progress-title">CSS3</div>
+  </div>
+  </div>
+  <div class="p-progress-bar-container title-up small extra-small color">
+  <div class="p-progress-bar" data-percent="78" data-delay="300" data-type="%">
+  <div class="progress-title">JQUERY</div>
+  </div>
+  </div>
+  <div class="p-progress-bar-container title-up small extra-small color">
+  <div class="p-progress-bar" data-percent="65" data-delay="400" data-type="%">
+  <div class="progress-title">MYSQL</div>
+  </div>
+  </div> -->
+  </div>
+  </div>
+  </div>
+  </section>
+
+
+<!-- <section>
+<div class="container">
+<div class="row">
+<div class="col-lg-6">
+<div class="accordion toggle fancy clean accordion-transparent">
+<div class="ac-item">
+<h5 class="ac">Why Should I Register for Reboot 2022?</h5>
+<div class="ac" style=""><p>Reboot 2022 is Malabar’s largest job fair, placing over 1000 students each year. It is the ideal venue for you to network with top companies. These companies are actively
+recruiting young talent, and you have the opportunity to impress them before they select candidates for an interview call. It’s an opportunity to network with over 100 company representatives from a range of industries.</p><br><p>This is an opportunity for you to establish a presence in the Cyberpark, which is one of Kerala’s primary focus areas and has the potential to grow to be one of the largest in the country. This is also an opportunity for you to witness the exciting and dynamic start of an IT and ITES ecosystem at its most creative and vibrant stage.</p>
+</div>
+</div>
+<div class="ac-item">
+<h5 class="ac-title">How should I Apply?</h5>
+<div class="ac-content" style="display: none;"><p>Apply online at <span style="text-decoration: underline;"><a href="/reboot-registration/">https://www.cafit.org.in/reboot-registration/</a></span>. You must submit your<br>resume; registration is open from March 1st to March 20th.</p>
+<p>Then, on the day of the job fair, you can walk into Cyberpark and meet with the respective company representatives for the preliminary round of interviews.</p></div>
+</div>
+
+</div>
+</div>
+<div class="col-lg-6">
+<div class="accordion toggle fancy clean accordion-transparent">
+<div class="ac-item">
+<h5 class="ac">What are the Job Openings Available?</h5>
+<div class="ac" style=""><p>A Participating company’s job opportunities are extremely diverse. They range from coding and design to sales and marketing, business development, administration, financial management, and customer service.</p><p>You can choose a job in a variety of fields based on your skills.</p><br><p>For instance : – </p><p><strong>Programming</strong> : Web design, software development, and mobile application design</p>
+
+<p><strong>Designing</strong> : Websites, mobile applications, graphics, and logos</p>
+<p>
+<strong>Advertising </strong>: digital advertising – Sales: both customer-facing and business-facing
+</p>
+<p>
+<strong>Content Creation </strong>: Writing Blogs and Copywriting
+</p>
+<p>
+<strong>Business Development</strong> : Human resources:recruitment and development
+</p><p>
+<strong>Administration </strong>: bookkeeping, legal support, and human resource management
+</p><p>
+<strong>Project Management</strong> : Project management</p>
+</div>
+</div>
+<div class="ac-item">
+<h5 class="ac-title">How should I Apply?</h5>
+<div class="ac-content" style="display: none;"><p>Apply online at <span style="text-decoration: underline;"><a href="/reboot-registration/">https://www.cafit.org.in/reboot-registration/</a></span>. You must submit your<br>resume; registration is open from March 1st to March 20th.</p>
+<p>Then, on the day of the job fair, you can walk into Cyberpark and meet with the respective company representatives for the preliminary round of interviews.</p></div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section> -->
+
+
+<br>
+<br>
+{% endblock %}

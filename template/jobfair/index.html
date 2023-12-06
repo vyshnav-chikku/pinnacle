@@ -1,349 +1,1512 @@
-
-{% extends 'jobfair/headerfooter.html' %}
+{% load static %}
 {% block title %}
 <title>Mizone | Pinnacle 2022 - Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@700;900&display=swap"
+  rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5r+L5X3v9aUpG2VqIu6H2FsPKZjUqZCgFYo4Jx2Tz+1h1/6" crossorigin="anonymous">
+
 {% endblock %}
 {% block content %}
-<style type="text/css">
-  /*
-*
-* ==========================================
-* CUSTOM UTIL CLASSES
-* ==========================================
-*
-*/
+<style>
+
+
+/* vast designs*/
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2022 codewithsadee
+ */
+
+
+
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+/**
+ * colors
+ */
+
+--russian-violet: hsl(269, 36%, 22%);
+--dark-purple: hsl(268, 22%, 15%);
+--eerie-black: hsl(240, 4%, 10%);
+--davys-gray: hsl(0, 0%, 34%);
+--light-gray: hsl(0, 0%, 84%);
+--cultured-1: hsl(0, 0%, 98%);
+--cultured-2: hsl(280, 14%, 96%);
+--cultured-3: hsl(280, 9%, 94%);
+--gainsboro: hsl(0, 1%, 85%);
+--black_10: hsla(0, 0%, 0%, 0.1);
+--black_5: hsla(0, 0%, 0%, 0.05);
+--pumpkin: hsl(212, 86%, 57%);
+--white: hsl(0, 0%, 100%);
+--black: hsl(0, 0%, 0%);
+
+/**
+ * typography
+ */
+
+--ff-poppins: 'Poppins', sans-serif;
+--ff-roboto: 'Roboto', sans-serif;
+
+--fs-1: 3rem;
+--fs-2: 2rem;
+--fs-3: 1.5rem;
+--fs-4: 1.4rem;
+--fs-5: 1.3rem;
+
+--fw-900: 900;
+--fw-700: 700;
+--fw-600: 600;
+--fw-500: 500;
+
+/**
+ * spacing
+ */
+
+--section-padding: 50px;
+
+/**
+ * box shadow
+ */
+
+--shadow-1: 0px 0px 20px var(--black_10);
+--shadow-2: 0 0 20px 4px var(--black_5);
+
+/**
+ * border radius
+ */
+
+--radius-6: 6px;
+--radius-10: 10px;
+
+/**
+ * transition
+ */
+
+--transition-1: 0.25s ease;
+--transition-2: 0.5s ease;
+--cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+--cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+
+}
+
+
+
+
+
+/*-----------------------------------*\
+#RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+a,
+img,
+span,
+button,
+ion-icon { display: block; }
+
+img { height: auto; }
+
+button {
+background: none;
+border: none;
+font: inherit;
+cursor: pointer;
+}
+
+ion-icon { pointer-events: none; }
+i{
+  color: black;
+}
+
+address { font-style: normal; }
+
+html {
+font-family: var(--ff-poppins);
+font-size: 10px;
+scroll-behavior: smooth;
+}
 
 body {
-    min-height: 100vh;
+background-color: var(--white);
+font-size: 1.6rem;
+color: var(--davys-gray);
 }
 
-.bg-cover {
-    background-size: cover !important;
+:focus-visible { outline-offset: 4px; }
+
+::-webkit-scrollbar { width: 10px; }
+
+::-webkit-scrollbar-track { background-color: hsl(0, 0%, 98%); }
+
+::-webkit-scrollbar-thumb { background-color: hsl(0, 0%, 80%); }
+
+::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
+
+
+
+
+
+/*-----------------------------------*\
+#REUSED STYLE
+\*-----------------------------------*/
+
+.container { padding-inline: 15px; }
+
+.btn {
+color: var(--color, var(--white));
+font-size: var(--fs-4);
+max-width: var(--width, max-content);
+padding: 10px 20px;
+border-radius: var(--radius-10);
+transition: var(--transition-1);
 }
 
-.hero_section{
-  padding:30px;
-  
+.btn-primary,
+.btn-secondary:is(:hover, :focus) { background-color: var(--pumpkin); }
+
+.btn-primary:is(:hover, :focus),
+.btn-secondary { background-color: var(--russian-violet); }
+
+.btn-outline {
+--color: var(--pumpkin);
+--width: 100%;
+text-align: center;
+font-weight: var(--fw-500);
+border: 1px solid var(--cultured-3);
 }
-.title{
-  font-size: 4rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 100px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+.btn-outline:is(:hover, :focus) {
+background-color: var(--pumpkin);
+color: var(--white);
 }
-/* @media screen and (max-w) {
-  
+
+.section { padding-block: var(--section-padding); }
+
+.section-subtitle {
+color: var(--pumpkin);
+font-size: var(--fs-3);
+margin-block-end: 5px;
+}
+
+.h1,
+.h2,
+.h3 { font-family: var(--ff-roboto); }
+
+.h1,
+.h2 { font-size: var(--fs-1); }
+
+.h2,
+.h3 { color: var(--eerie-black); }
+
+.h3 { font-size: var(--fs-2); }
+
+.section-text,
+.card-text {
+font-size: var(--fs-3);
+line-height: 1.8;
+}
+
+.btn-list {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 10px;
+}
+
+.btn-item-link {
+overflow: hidden;
+border-radius: var(--radius-10);
+}
+
+.btn-item-link .img { width: 136px; }
+
+.w-100 { width: 100%; }
+
+.section-title { margin-block: 40px 30px; }
+
+
+
+:is(.features, .blog) :is(.section-subtitle, .section-title) {
+text-align: center;
+}
+
+.img-holder {
+aspect-ratio: var(--width) / var(--height);
+background-color: var(--light-gray);
+}
+
+.img-cover {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: var(--transition-2);
+}
+
+
+
+
+
+/*-----------------------------------*\
+#HEADER
+\*-----------------------------------*/
+
+.header {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+background-color: var(--white);
+padding-block: 15px;
+z-index: 4;
+}
+
+.header.active {
+position: fixed;
+transform: translateY(-100%);
+filter: drop-shadow(var(--shadow-1));
+animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+0% { transform: translateY(-100%); }
+100% { transform: translateY(0); }
+}
+
+.header > .container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+color: var(--dark-purple);
+font-family: var(--ff-roboto);
+font-size: 35px;
+font-weight: var(--fw-900);
+}
+
+
+
+.nav-toggle-btn {
+background-color: var(--pumpkin);
+color: var(--white);
+font-size: 35px;
+padding: 2px 8px;
+}
+
+.navbar {
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+background-color: var(--white);
+padding-inline: 15px;
+overflow: hidden;
+max-height: 0;
+visibility: hidden;
+transition: 0.25s var(--cubic-out);
+}
+
+.navbar.active {
+max-height: 340px;
+visibility: visible;
+transition-duration: 0.5s;
+}
+
+.navbar-list {
+background-color: var(--cultured-1);
+margin-block-end: 15px;
+padding: 20px 30px;
+}
+
+.navbar-link {
+color: var(--eerie-black);
+font-size: var(--fs-3);
+font-weight: var(--fw-600);
+padding-block: 7px;
+transition: var(--transition-1);
+}
+
+.navbar-link:is(:hover, :focus, .active) { color: var(--pumpkin); }
+
+.navbar .btn { margin-block: 8px; }
+
+
+
+
+
+/*-----------------------------------*\
+#HERO
+\*-----------------------------------*/
+
+.hero {
+background-color: var(--russian-violet);
+color: var(--white);
+padding-block-start: calc(var(--section-padding) + 70px);
+}
+
+.hero-content { margin-block-end: 20px; }
+
+.hero-title { margin-block: 15px 20px; }
+
+.hero .section-text { margin-block-end: 30px; }
+
+
+
+
+
+/*-----------------------------------*\
+#FEATURES
+\*-----------------------------------*/
+
+.features .section-title { margin-block-end: 30px; }
+
+.features-list {
+display: grid;
+gap: 10px;
+}
+
+.features-item {
+position: relative;
+transition: var(--transition-2);
+}
+
+.features-item::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 40%;
+background-color: var(--cultured-2);
+border-radius: var(--radius-10);
+z-index: -1;
+}
+
+.features-item:hover { transform: translateY(-10px); }
+
+.features-card {
+background-color: var(--white);
+box-shadow: var(--shadow-2);
+margin: 20px;
+padding: 20px;
+border-radius: var(--radius-10);
+text-align: center;
+}
+
+.features-card .card-icon {
+color: var(--pumpkin);
+font-size: 35px;
+max-width: max-content;
+margin-inline: auto;
+}
+
+.features-card .card-icon ion-icon { --ionicon-stroke-width: 35px; }
+
+.features-card .card-title { margin-block: 18px 15px; }
+
+
+
+
+
+/*-----------------------------------*\
+#ABOUT
+\*-----------------------------------*/
+
+.about { background-color: var(--cultured-3); }
+
+.about .about-banner { margin-block-end: 20px; }
+
+.about .section-text,
+.about-item:not(:last-child) { margin-block-end: 25px; }
+
+.about-list { margin-block-end: 35px; }
+
+.about-item {
+display: flex;
+align-items: flex-start;
+gap: 15px;
+}
+
+.about-item .item-icon {
+background-color: var(--pumpkin);
+color: var(--white);
+font-size: 20px;
+padding: 12px;
+border-radius: 50%;
+}
+
+.about-item .item-title { margin-block-end: 10px; }
+
+
+
+
+
+/*-----------------------------------*\
+#ABOUT 2
+\*-----------------------------------*/
+
+.about-2 .section-text:last-of-type { margin-block: 30px; }
+
+.about-2 .about-content { margin-block-end: 30px; }
+
+
+
+
+
+/*-----------------------------------*\
+#APP
+\*-----------------------------------*/
+
+.app {
+background-color: var(--russian-violet);
+color: var(--white);
+}
+
+.app-banner { margin-block-end: 30px; }
+
+.app .section-title { color: var(--white); }
+
+.app .section-text { margin-block-end: 30px; }
+
+
+
+
+
+/*-----------------------------------*\
+#BLOG
+\*-----------------------------------*/
+
+.blog .section-title { margin-block-end: 30px; }
+
+.blog-list {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;
+}
+
+.blog-list > li { max-width: 100%; }
+
+.blog-card {
+padding: 15px;
+border-radius: var(--radius-10);
+box-shadow: var(--shadow-2);
+}
+
+.blog-card .card-banner {
+border-radius: var(--radius-10);
+overflow: hidden;
+}
+
+.blog-card:is(:hover, :focus-within) .img-cover { transform: scale(1.2); }
+
+.blog-card .card-content {
+padding: 15px;
+padding-block-start: 25px;
+}
+
+.blog-card :is(.card-meta-list, .card-meta-item) {
+display: flex;
+align-items: center;
+}
+
+.blog-card .card-meta-list {
+gap: 15px;
+margin-block-end: 15px;
+}
+
+.blog-card .card-meta-item { gap: 6px; }
+
+.blog-card .card-meta-item ion-icon {
+color: var(--pumpkin);
+font-size: var(--fs-5);
+}
+
+.blog-card .card-meta-text { font-size: var(--fs-5); }
+
+.blog-card .h3 { margin-block-end: 15px; }
+
+.blog-card .card-title { transition: var(--transition-1); }
+
+.blog-card .card-title:is(:hover, :focus) { color: var(--pumpkin); }
+
+
+
+
+
+/*-----------------------------------*\
+#FOOTER
+\*-----------------------------------*/
+
+.footer { background-color: var(--cultured-3);
+border-top: 1px solid grey;
+
+}
+
+.footer-top .container {
+display: grid;
+gap: 30px;
+}
+
+.footer-top .section-text { margin-block: 15px 22px; }
+
+.social-list {
+display: flex;
+gap: 15px;
+}
+
+.social-link {
+background-color: var(--white);
+padding: 12px;
+border-radius: 50%;
+transition: var(--transition-1);
+}
+
+.social-link:is(:hover, :focus) {
+background-color: var(--pumpkin);
+color: var(--white);
+transform: translateY(-2px);
+}
+/* .footer-list{
+  width: 400px;
 } */
-.pinnacle{
-  color: #2da6de;
+
+.footer-list-title {
+color: var(--eerie-black);
+font-family: var(--ff-roboto);
+font-size: var(--fs-2);
+font-weight: var(--fw-700);
+margin-block-end: 20px;
 }
 
-.links{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  /* flex-direction: column; */
-  font-size: 3rem;
-  font-weight: bold;
-}
-/* .employee{
-  margin-bottom: 50px;
-} */
-.employee,.employer{
-  display: flex;
-  flex-direction: column;
-  margin:10px;
-  margin-bottom: 50px;
-}
-.employee_title{
-  margin-bottom: 30px;
-
-}
-a{
-}
-.employer_title{
-  margin-bottom: 30px;
+.footer-link {
+font-size: var(--fs-4);
+margin-block-start: 10px;
+transition: var(--transition-1);
 }
 
+.footer-link:is(:hover, :focus),
+.footer-item .item-link:not(.address):is(:hover, :focus) {
+color: var(--pumpkin);
+}
 
-/*
-*
-* ==========================================
-* FOR DEMO PURPOSES
-* ==========================================
-*
+.footer-item {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-block-start: 10px;
+}
+
+.footer-item ion-icon {
+flex-shrink: 0;
+color: var(--pumpkin);
+font-size: 17px;
+margin-block-start: 2px;
+}
+
+.footer-item .item-link {
+font-size: var(--fs-4);
+transition: var(--transition-1);
+}
+
+.footer-bottom {
+padding-block: 20px;
+border-block-start: 1px solid var(--gainsboro);
+}
+
+.copyright {
+font-size: var(--fs-4);
+text-align: center;
+}
+
+.copyright-link {
+color: var(--pumpkin);
+display: inline-block;
+}
+
+.mizoneyutube{
+  width:300px;
+}
+
+
+
+
+
+/*-----------------------------------*\
+#BACK TO TOP
+\*-----------------------------------*/
+
+.back-top-btn {
+position: fixed;
+bottom: 30px;
+right: -36px;
+background-color: var(--pumpkin);
+color: var(--white);
+padding: 10px;
+border-radius: 50%;
+opacity: 0;
+visibility: hidden;
+transition: var(--transition-1);
+}
+
+.back-top-btn.active {
+opacity: 1;
+visibility: visible;
+transform: translateX(-51px);
+}
+
+
+
+
+
+
+
+/*-----------------------------------*\
+#MEDIA QUERIES
+\*-----------------------------------*/
+
+/**
+* responsive for larger than 575px screen
 */
 
+@media (min-width: 575px) {
 
-</style>
-<!-- <div  style="background: url('/static/jobfair/images/banner/pinnacle1.jpg')" class="jumbotron bg-cover text-white">
-    <div class="container py-5 text-center">
-        <h1 style="" class="display-4 font-weight-bold" ><p>&nbsp;</p></h1>
-         <p class="font-italic mb-0">Using simple jumbotron-style component, create a nice Bootstrap 4 header with a background image.</p>
-        <p class="font-italic">Snippe by
-            <a href="https://bootstrapious.com" class="text-white">
-                <u>Bootstrapious</u>
-            </a>
-        </p>
-        <a href="#" role="button" class="btn btn-primary px-5">See All Features</a> -->
-    </div>
-</div> 
+/**
+ * REUSED STYLE
+ */
 
-<div class="hero_section">
-  <div class="title"><strong ><span class="pinnacle">Pinnacle</span> '22</strong></div>
-  <div class="links">
-    <div class="employee">
-      <div class="employee_title">Register as Employee</div>
-      <a class="btn" href="/pinnacle-employee-registration/"><i class=""></i>Register Now</a>
-    </div>
-    <div class="employer">
-      <div class="employer_title">Looking For a candidate</div>
-
-      <a class="btn" href="/pinnacle-employer-registration/">Register Now</a>
-    </div>
-  </div>
-</div>
+.container {
+  /* max-width: 540px; */
+  width: 100%;
+  margin-inline: auto;
+}
 
 
 
+/**
+ * FEATURES
+ */
 
-<!-- <style type="text/css">
-  .masthead {
-  height: 100vh;
-  min-height: 500px;
-  background-image: url("/static/jobfair/images/banner/pinnacle1.jpg");
+.features-list {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+
+
+/**
+ * APP
+ */
+
+.app-banner { max-width: max-content; }
+
+
+
+/**
+ * FOOTER
+ */
+
+.footer-top .container { grid-template-columns: 1fr 1fr; }
+
+}
+
+
+
+
+
+/**
+* responsive for larger than 768px screen
+*/
+
+@media (min-width: 768px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-1: 4.5rem;
+
+}
+
+
+
+/**
+ * REUSED STYLE
+ */
+
+.container { max-width: 720px; }
+
+.h2 { --fs-1: 3.5rem; }
+
+.btn {
+  font-size: unset;
+  padding: 15px 30px;
+}
+
+.btn-list { gap: 20px; }
+
+.btn-item-link .img { width: 150px; }
+
+
+
+/**
+ * HEADER
+ */
+
+.navbar .btn {
+  font-size: var(--fs-4);
+  padding: 10px 20px;
+}
+
+
+
+/**
+ * BLOG
+ */
+
+.blog-list { gap: 20px; }
+
+.blog-list > li { max-width: calc(50% - 10px); }
+
+}
+
+
+
+
+
+/**
+* responsive for larger than 992px screen
+*/
+
+@media (min-width: 992px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * spacing
+   */
+
+  --section-padding: 50px;
+
+}
+
+
+
+/**
+ * REUSED STYLE
+ */
+
+.container { max-width: 960px; }
+
+.btn-item-link .img { width: 185px; }
+
+
+
+/**
+ * HEADER
+ */
+
+.nav-toggle-btn { display: none; }
+
+.navbar,
+.navbar.active,
+.navbar-list { all: unset; }
+
+.navbar-list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+
+
+/**
+ * HERO
+ */
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.hero-content { margin-block-end: 0; }
+
+
+
+/**
+ * FEATURES
+ */
+
+.features .section-title { margin-block-end: 40px; }
+
+.features-list { grid-template-columns: repeat(4, 1fr); }
+
+
+
+/**
+ * ABOUT, ABOUT 2, APP
+ */
+
+:is(.about, .about-2, .app) .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-banner,
+.app-banner { margin-block-end: 0; }
+
+
+
+/**
+ * APP
+ */
+
+.app {
+  padding-block: 0;
+  margin-block-end: 60px;
+}
+
+.app-content { padding-block: var(--section-padding); }
+
+.app-banner { transform: translateY(100px); }
+
+
+
+/**
+ * BLOG
+ */
+
+.blog-list > li { max-width: calc(33.33% - 13.33px); }
+
+
+
+/**
+ * FOOTER
+ */
+
+.footer-top .container {
+  grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
+  gap: 50px;
+}
+
+}
+
+
+
+
+
+/**
+* responsive for larger than 1200px screen
+*/
+
+@media (min-width: 1200px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-1: 5rem;
+
+}
+
+
+
+/**
+ * REUSED STYLE
+ */
+
+.container { max-width: 1180px; }
+
+.section-text { --fs-4: 1.5rem; }
+
+.h2 { --fs-1: 4rem; }
+
+.h3 { --fs-2: 2.2rem; }
+
+
+
+/**
+ * HEADER
+ */
+
+.header { padding-block: 20px;
+padding-left: 50px;
+padding-right: 50px;
+
+}
+
+:is(.header, .hero) .container {
+  max-width: unset;
+  padding-inline: 25px;
+}
+
+.header .btn {
+  font-size: var(--fs-3);
+  padding: 14px 30px;
+  border-radius: var(--radius-6);
+  margin-block: 0;
+}
+
+
+
+/**
+ * HERO
+ */
+
+.hero { --section-padding: 30px; }
+
+
+
+/**
+ * FEATURES
+ */
+
+.features-list { gap: 25px; }
+
+.features-card { padding: 30px; }
+
+
+
+/**
+ * BLOG
+ */
+
+.blog-list { gap: 25px; }
+
+.blog-list > li { max-width: calc(33.33% - 16.66px); }
+
+
+
+/**
+ * FOOTER
+ */
+
+.footer-list-title { --fs-2: 2.2rem; }
+
+.social-link {
+  font-size: 18px;
+  padding: 14px;
+}
+
+.footer-link,
+.copyright { --fs-4: 1.5rem; }
+
+
+
+/**
+ * BACK TO TOP
+ */
+
+.back-top-btn {
+  font-size: 24px;
+  padding: 13px;
+  bottom: 40px;
+}
+
+.back-top-btn.active { transform: translateX(-80px); }
+
+}
+
+
+
+/* header overlay section */
+
+.section_overlay{
+  margin-top: 100px;
+  height: 400px;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-}
-</style> -->
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">Start Bootstrap</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
-
-<!-- Full Page Image Header with Vertically Centered Content -->
-<!-- <header class="masthead">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-12 text-center"> -->
-        <!-- <h1 class="fw-light">Vertically Centered Masthead Content</h1>
-        <p class="lead">A great starter layout for a landing page</p> -->
-      <!-- </div>
-    </div>
-  </div>
-</header> -->
-
-<!-- <section class="halfscreen" data-bg-parallax="/static/jobfair/images/parallax/18.jpg">
-<div class="bg-overlay"></div>
-<div class="container container-fullscreen text-light">
-<div class="text-middle text-center">
-<h1 class="text-uppercase text-medium">Pinnacle '22</h1>
-</div>
-</div>
-</section>
- -->
-<!--  <style type="text/css">
-   .masthead {
-  overflow: hidden;
-  color: #FFF;
-  padding: 1em;
-  /*border-top: 6px solid #2da6de;*/
-  background-color: #404040;
+  padding:20px;
+  background-image:url("/static/jobfair/images/header/overlay2.jpg");
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: var(--ff-roboto);
 }
 
-  .responsive-image {
-    background-position: center;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-  }
-
-
-.masthead .entry-header {
-  margin: 7.5em 0 3.5em 0;
-  font-weight: 300;
-  line-height: 1.5;
-  overflow: auto;
-}
-
-  @media screen and (min-width: 640px) {
-    margin: 15.5em 0 7.5em 0;
-  }
-
-
-
-.masthead .entry-title {
-  font-size: 2.5;
-  line-height: 1;
-  font-weight: 700;
-  margin: 0 0 0.25em 0;
-}
-
-  @media screen and (min-width: 640px) {
-    max-width: 650px;
-    font-size: 4em;
-  }
-
-
-
-.masthead .entry-subtitle {
-  font-family: "freight-text-pro";
-  font-style: italic;
-  line-height: 1.25;
-  margin-top: 0;
-  margin-bottom: 0.35em;
-  color: #9BA800;
-  font-size: 1.5em;
-}
-
-  .responsive-image {
-    background-image: url("/static/jobfair/images/banner/pinnacle.jpg");
-  }
-
-  @media screen and (min-width: 320px) {
-    .responsive-image {
-      background-image: url("/static/jobfair/images/banner/pinnacle320.jpg");
+.pause-button {
+      background-color: #007bff;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 24px;
+      height: 40px;
+      width: 40px;
+      line-height: 40px;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      padding: 0;
     }
-  }
-  @media screen and (min-width: 640px)
-  {
-    .responsive-image {
-      background-image: url("/static/jobfair/images/banner/pinnacle640.jpg");
+
+    .section_overlay_2{
+      height: 600px;
+  margin-top: 100px;
+  background-size: cover;
+  background-position: center;
+  padding:20px;
+  background-image:url("/static/jobfair/images/header/overlay2.jpg");
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+flex-direction: column;
+align-items: center;
+ 
+}
+
+.overlay_title_2{
+  font-weight: bold;
+  font-family: var(--ff-roboto);
+  font-size: 5.5rem;
+  color: white;
+  margin-top: 50px;
+}
+
+.registrations{
+  display: flex;
+  justify-content: space-between;
+  padding:50px;
+  width:80vw;
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  margin: auto 0;
+}
+
+@media (max-width:900px){
+  .section_overlay_2{
+      height: 500px;
     }
+.overlay_title_2{
+  font-size: 3.5rem;
+
+}
+.registrations{
+  flex-direction: column;
+  font-size: 2.2rem;
+  width:95vw;
+
+}
+.employer{
+  margin-bottom: 30px;
+}
+}
+
+.overlay_btn{
+  background-color: rgb(60, 134, 214);
+  border-radius: 40px;
+  padding: 7px 15px;
+  max-width: 190px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  color: white;
+  
+}
+.register_ion{
+  margin-left: 5px;
+  transform: scale(1.2);
+  color: black;
+ 
+}
+.register_ion:hover{
+    transform: scale(1.5);
+
   }
-  @media screen and (min-width: 1024px) {
-    .responsive-image {
-      background-image: url("/static/jobfair/images/banner/pinnacle1024.jpg");
-    }
-  }
+
+
+
+
+
+
+
 </style>
 
-<div class="masthead responsive-image">
-   <header class="entry-header">
-      <h1 class="entry-title  ">Pinnacle'22</h1>
-      <h2 class="entry-subtitle">Some sort of lovely supporting title</h2>
-    </header>
-  </div> -->
 
-<section class="p-b-10">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.1/esm/ionicons.min.js" integrity="sha512-WsL2r6j6Im3HvCp3uuExL45LhU4qwsS4HgVHgti+k/9zXNQnLqiunaxwNxDl+NsLHryCUyGPBw2IV7mGe1Z7nQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<body id="top">
+  
+
+
+<header class="header" data-header>
   <div class="container">
-  <div class="row">
-  <div class="col-lg-6">
-  <div class="heading-text heading-section">
-  <!-- <h2 ><span style="text-transform: uppercase; color: #2da6de;"><strong >Pinnacle</span> '22</strong></h2> -->
-  <span class="lead" style ="text-align: justify;
-  text-justify: inter-word"><p>Pinnacle'22 will accrue the employers, experienced professionals and entry level talented individuals under one roof.This Job fair will also compile organizations from various sectors including all kinds of private organizations,highly competitive and professional job seekers thereby serving as the platform for an open and wide-ranging employment opportunities.</p>
-    <p>Employment is one of the basic needs in order to survive in the world. Employers and job seekers will be available in one place and the job seekers can meet the employers and get the chance to get their dream job. The main objective of Pinnacle 2022 is to provide employment to the unemployed youths of Kerala. Through this job fest, the job seekers can meet the employers and be able to grab the job of their choice. 
-    </p></span>
+
+    <a href="#" class="logo">
+      <img src="http://mizone.in/wp-content/themes/Mizone/image/logo.png"  alt="" class="d-inline-block align-middle mr-2">
+
+    </a>
+
+    <nav class="navbar" data-navbar>
+      <ul class="navbar-list container">
+
+        <!-- <li>
+          <a href="#home" class="navbar-link active" data-nav-link>Home</a>
+        </li>
+
+        <li>
+          <a href="/pinnacle-employee-registration/" class="navbar-link" data-nav-link>Job Seeker</a>
+        </li>
+
+        <li>
+          <a href="/pinnacle-employer-registration/" class="navbar-link" data-nav-link>Employer</a>
+        </li> -->
+
+
+      </ul>
+    </nav>
+
+
   </div>
+</header>
+
+
+<section class="section_overlay_2">
+ <div class="overlay_title_2">Pinnacle'24</div>
+
+ <div class="registrations">
+  <div class="employer">
+    <div class="title_employer">Employer Registration</div>
+    <a class="overlay_btn" href="/pinnacle-employer-registration/" >Register Now <ion-icon class="register_ion" name="play-circle"></ion-icon></a>
   </div>
-  <div class="col-lg-6 m-t-100">
-    <div class="post-image w-80"> <a > <img alt="" src="/static/jobfair/images/blog/12.jpg"> </a><!--  <span class="post-meta-category"><a href="#">Lifestyle</a></span> --> </div>
-  <!-- <div class="p-progress-bar-container title-up small extra-small color">
-  <div class="p-progress-bar" data-percent="100" data-delay="100" data-type="%">
-  <div class="progress-title">HTML5</div>
+  <div class="employer">
+    <div class="title_employer">Candidate Registration</div>
+    <a class="overlay_btn" href="/pinnacle-employee-registration/" >Register Now <ion-icon class="register_ion" name="play-circle"></ion-icon></a>
+
   </div>
+ </div>
+
+
+
+</section>
+
+
+
+<!-- <section class="section_overlay">
+  <div class="overlay_title">Pinnacle 23</div>
+ 
+  
+ </section>
+
+
+<section class="section blog" id="blog" aria-label="blog">
+  <div class="container">
+
+
+    <ul class="blog-list">
+
+      
+
+      <li>
+        <div class="blog-card">
+
+          <figure class="card-banner img-holder" style="--width: 768; --height: 558;">
+            <img src="../../static/jobfair/images/header/job4.jpg" width="768" height="558" loading="lazy"
+              alt="Brush Strokes Energize Trees In Paintings" class="img-cover">
+          </figure>
+
+          <div class="card-content">
+
+            
+
+            <h3 class="h3">
+              <a href="/pinnacle-employee-registration/" class="card-title">Register as an employee</a>
+            </h3>
+
+            <a href="/pinnacle-employee-registration/" class="btn btn-outline">Register Now</a>
+
+          </div>
+
+        </div>
+      </li>
+
+      <li>
+        <div class="blog-card">
+
+          <figure class="card-banner img-holder" style="--width: 768; --height: 558;">
+            <img src="../../static/jobfair/images/header/job3.jpg" width="768" height="558" loading="lazy"
+              alt="Brush Strokes Energize Trees In Paintings" class="img-cover">
+          </figure>
+
+          <div class="card-content">
+
+            
+
+            <h3 class="h3">
+              <a href="/pinnacle-employer-registration/" class="card-title">Looking For a candidate</a>
+            </h3>
+
+            <a href="/pinnacle-employer-registration/" class="btn btn-outline">Register Now</a>
+
+          </div>
+
+        </div>
+      </li>
+
+
+    </ul>
+
   </div>
-  <div class="p-progress-bar-container title-up small extra-small color">
-  <div class="p-progress-bar" data-percent="94" data-delay="200" data-type="%">
-  <div class="progress-title">CSS3</div>
-  </div>
-  </div>
-  <div class="p-progress-bar-container title-up small extra-small color">
-  <div class="p-progress-bar" data-percent="78" data-delay="300" data-type="%">
-  <div class="progress-title">JQUERY</div>
-  </div>
-  </div>
-  <div class="p-progress-bar-container title-up small extra-small color">
-  <div class="p-progress-bar" data-percent="65" data-delay="400" data-type="%">
-  <div class="progress-title">MYSQL</div>
-  </div>
-  </div> -->
-  </div>
-  </div>
-  </div>
+</section> -->
+
+<section class="section about" id="about" aria-label="about">
+    <div class="container">
+
+      <figure class="about-banner">
+        <img src="/static/jobfair/images/blog/12.jpg" width="1262" height="1357" loading="lazy" alt="about banner"
+          class="w-100">
+      </figure>
+
+      <div class="about-content">
+
+
+        <h2 class="h2 section-title">Pinnacle'24</h2>
+
+        <p class="section-text">
+            Pinnacle'24 will accure the employers, experienced professionals and entry level talented individuals under one roof. This Job fair will also compile organizations from various sectors including all kinds of private organizations, highly competitive and professional job seekers thereby serving as the platform for an open and wide-ranging employment opportunities.</p>
+            <p class="section-text">Employment is one of the basic needs in order to survive in the world. Employers and job seekers will be available in one place and the job seekers can meet the employers and get the chance to get their dream job. The main objective of Pinnacle 2024 is to provide employment to the unemployed youths of Kerala. Through this job fest, the job seekers can meet the employers and be able to grab the job of their choice. 
+           
+        </p>
+
+        <!-- <ul class="about-list">
+
+          <li class="about-item">
+
+            <div class="item-icon">
+              <ion-icon name="people"></ion-icon>
+            </div>
+
+            <div>
+                <h3 class="h3 item-title">Register as an Employee</h3>
+                <a href="/pinnacle-employee-registration/" class="btn btn-secondary">Register Now</a>
+            </div>
+
+
+
+          </li>
+
+          <li class="about-item">
+
+            <div class="item-icon">
+              <ion-icon name="pie-chart" aria-hidden="true"></ion-icon>
+            </div>
+
+            <div>
+                <h3 class="h3 item-title">Looking For a Candidate</h3>
+                <a href="/pinnacle-employer-registration/" class="btn btn-secondary">Register Now</a>
+
+
+             
+            </div>
+
+          </li>
+
+        </ul> -->
+
+
+      </div>
+
+    </div>
   </section>
 
 
-<!-- <section>
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-<div class="accordion toggle fancy clean accordion-transparent">
-<div class="ac-item">
-<h5 class="ac">Why Should I Register for Reboot 2022?</h5>
-<div class="ac" style=""><p>Reboot 2022 is Malabar’s largest job fair, placing over 1000 students each year. It is the ideal venue for you to network with top companies. These companies are actively
-recruiting young talent, and you have the opportunity to impress them before they select candidates for an interview call. It’s an opportunity to network with over 100 company representatives from a range of industries.</p><br><p>This is an opportunity for you to establish a presence in the Cyberpark, which is one of Kerala’s primary focus areas and has the potential to grow to be one of the largest in the country. This is also an opportunity for you to witness the exciting and dynamic start of an IT and ITES ecosystem at its most creative and vibrant stage.</p>
-</div>
-</div>
-<div class="ac-item">
-<h5 class="ac-title">How should I Apply?</h5>
-<div class="ac-content" style="display: none;"><p>Apply online at <span style="text-decoration: underline;"><a href="/reboot-registration/">https://www.cafit.org.in/reboot-registration/</a></span>. You must submit your<br>resume; registration is open from March 1st to March 20th.</p>
-<p>Then, on the day of the job fair, you can walk into Cyberpark and meet with the respective company representatives for the preliminary round of interviews.</p></div>
-</div>
-
-</div>
-</div>
-<div class="col-lg-6">
-<div class="accordion toggle fancy clean accordion-transparent">
-<div class="ac-item">
-<h5 class="ac">What are the Job Openings Available?</h5>
-<div class="ac" style=""><p>A Participating company’s job opportunities are extremely diverse. They range from coding and design to sales and marketing, business development, administration, financial management, and customer service.</p><p>You can choose a job in a variety of fields based on your skills.</p><br><p>For instance : – </p><p><strong>Programming</strong> : Web design, software development, and mobile application design</p>
-
-<p><strong>Designing</strong> : Websites, mobile applications, graphics, and logos</p>
-<p>
-<strong>Advertising </strong>: digital advertising – Sales: both customer-facing and business-facing
-</p>
-<p>
-<strong>Content Creation </strong>: Writing Blogs and Copywriting
-</p>
-<p>
-<strong>Business Development</strong> : Human resources:recruitment and development
-</p><p>
-<strong>Administration </strong>: bookkeeping, legal support, and human resource management
-</p><p>
-<strong>Project Management</strong> : Project management</p>
-</div>
-</div>
-<div class="ac-item">
-<h5 class="ac-title">How should I Apply?</h5>
-<div class="ac-content" style="display: none;"><p>Apply online at <span style="text-decoration: underline;"><a href="/reboot-registration/">https://www.cafit.org.in/reboot-registration/</a></span>. You must submit your<br>resume; registration is open from March 1st to March 20th.</p>
-<p>Then, on the day of the job fair, you can walk into Cyberpark and meet with the respective company representatives for the preliminary round of interviews.</p></div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-</section> -->
 
 
-<br>
-<br>
+      
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="section footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+        <img src="http://mizone.in/wp-content/themes/Mizone/image/logo.png"  alt="" class="d-inline-block align-middle mr-2">
+
+          </a>
+
+          <p class="section-text">
+            Malabar Innovation Entrepreneurship Zone Building No:446, Mangattuparamba, Near Kannur University Campus, Kalliasseri, Kannur, Kerala -670 567
+          </p>
+
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://instagram.com/mizoneknr?igshid=OGQ5ZDc2ODk2ZA==" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/in/malabar-innovation-entrepreneurship-zone-mizone-b21342181?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact</p>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+
+
+            <a href="mailto:admin@mizone.in" class="item-link">admin@mizone.in</a>
+          </li>
+
+
+          <li class="footer-item">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+
+            <a href="tel:+91 7034112113" class="item-link">+91 7034112113</a>
+          </li>
+
+      
+          <li class="footer-item">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+
+
+            <a href="tel:+91 7034112113" class="item-link">+91 7034112113</a>
+          </li>
+
+      
+         
+
+
+        </ul>
+
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Entrepreneurs Help Desk</p>
+          </li>
+          <li class="footer-item">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+
+
+
+            <a href="tel:+91 7688 916 916" class="item-link">+91 7688 916 916</a>
+          </li>
+
+        </ul>
+
+
+        
+        <ul class="footer-list">
+          <div class="mizoneyutube"   >
+
+            
+            <iframe width="" height="230" src="https://www.youtube.com/embed/B7eM0N-obEQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+
+        </ul>
+
+        
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024 All Rights Reserved by <a href="http://mizone.in/" target="_blank" class="copyright-link">Mizone</a>.
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+</body>
+
+
+
+
+
 {% endblock %}
